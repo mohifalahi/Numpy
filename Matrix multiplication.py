@@ -18,3 +18,14 @@ print(matrix_mul(A, B))
 N = A @ B
 print(N)
 
+# Process time evaluation
+iter = 1000000
+t0 = time.process_time()
+for i in range(iter):
+    A @ B
+print(f"Time for numpy calc: {time.process_time() - t0}")
+
+t0 = time.process_time()
+for i in range(iter):
+    matrix_mul(A, B)
+print(f"Time for pure python calc: {time.process_time() - t0}")
